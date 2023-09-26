@@ -1,0 +1,74 @@
+/* Define a style for the confirmation dialog */
+.confirmation-dialog {
+    -fx-background-color: #f0f0f0; /* Background color */
+	background-color : #f0f0f0; 
+}
+
+.confirmation-dialog .dialog-pane {
+    -fx-background-color: #ffffff; /* Dialog pane background color */
+    -fx-border-color: #333333; /* Dialog pane border color */
+    -fx-border-width: 2px; /* Dialog pane border width */
+
+	background-color:#f0f0f0; 
+	border-color : #333333;
+	border-width : 2px ;
+
+
+
+}
+
+.confirmation-dialog .dialog-pane .header-panel {
+    -fx-background-color: #333333; /* Header panel background color */
+    -fx-text-fill: white; /* Header text color */
+
+	background-color: #333333; 
+
+}
+
+.confirmation-dialog .dialog-pane .content {
+    -fx-padding: 10px; /* Padding inside the content area */
+
+	padding: 10px;
+}
+
+.title_text{
+	-fx-width: 95px;
+	-fx-color: #000;
+	-fx-text-align: center;
+	-fx-font-family: Inter;
+	-fx-font-size: 20px;
+	-fx-font-style: normal;
+	-fx-font-weight: 700;
+	-fx-line-height: normal;
+
+	color: #000;
+	width: 95px;
+	text-align: center;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+
+
+}
+.layout{
+
+    -fx-width: "800px";
+    -fx-height: "500px";
+    -fx-background:#8c8c8c;
+    width: "800px";
+    height: "500px";
+    background: #5c5c5c;
+
+}
+
+.textFlow{
+	-fx-border-style: dotted;
+	border-style: dotted;
+
+
+}
+
+
+/* Add more styles as needed */

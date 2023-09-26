@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<fx:root fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="850.0" styleClass="layout" stylesheets="@popup.css" type="AnchorPane" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Group layoutX="50.0" layoutY="65.0" scaleX="2.0" scaleY="2.0" translateX="10.0">
+         <rotationAxis>
+            <Point3D y="50.0" z="10.0" />
+         </rotationAxis>
+      </Group>
+      <Text layoutX="12.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grammar: " wrappingWidth="64.80343627929688" />
+      <Text layoutX="184.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Startcat : " wrappingWidth="52.136749267578125" />
+      <Text layoutX="362.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From:" wrappingWidth="39.470123291015625" />
+      <Text layoutX="485.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To :" wrappingWidth="32.136749267578125" />
+      <Button fx:id="clearButton" focusTraversable="false" layoutX="667.0" layoutY="39.0" mnemonicParsing="false" onAction="#clearButtonClicked" prefHeight="25.0" prefWidth="72.0" text="Clear" />
+      <Button fx:id="randomButton" focusTraversable="false" layoutX="746.0" layoutY="39.0" mnemonicParsing="false" onAction="#randomButtonClicked" prefHeight="17.0" prefWidth="72.0" text="Random" />
+      <Separator layoutX="14.0" layoutY="76.0" prefHeight="2.0" prefWidth="833.0" />
+      <ScrollPane fx:id="scrollPane" focusTraversable="false" layoutX="-2.0" layoutY="75.0" prefHeight="227.0" prefWidth="850.0" stylesheets="@popup.css">
+         <content>
+            <VBox fx:id="wordVBox" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="231.0" prefWidth="835.0" spacing="5.0" style="-fx-background-color: white;">
+               <children>
+                  <HBox fx:id="text_section" alignment="BOTTOM_LEFT" prefHeight="40.0" prefWidth="835.0" spacing="5.0">
+                     <children>
+                        <TextField fx:id="input_text" alignment="BOTTOM_LEFT" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+                  <TextFlow fx:id="textflow" blendMode="DARKEN" focusTraversable="false" lineSpacing="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="899.0" styleClass="textFlow" stylesheets="@popup.css">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </TextFlow>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </content>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </ScrollPane>
+      <Button fx:id="addSentence" layoutX="16.0" layoutY="308.0" mnemonicParsing="false" onAction="#addSentenceButtonClick" prefHeight="25.0" prefWidth="194.0" text=" Add Sentence" />
+      <TitledPane fx:id="transltionScrollablepanel" animated="false" layoutX="18.0" layoutY="344.0" prefHeight="506.0" prefWidth="825.0" text="Translations">
+         <padding>
+            <Insets right="15.0" />
+         </padding>
+         <content>
+            <ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="480.0" prefWidth="826.0" vbarPolicy="ALWAYS">
+               <content>
+                  <VBox fx:id="translations" prefHeight="463.0" prefWidth="792.0" />
+               </content>
+            </ScrollPane>
+         </content>
+      </TitledPane>
+      <Button fx:id="deleteButton" focusTraversable="false" layoutX="585.0" layoutY="39.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="25.0" prefWidth="72.0" text="Delete" />
+      <Button fx:id="deleteSetence" focusTraversable="false" layoutX="225.0" layoutY="308.0" mnemonicParsing="false" onAction="#deleteSentenceButtonClick" prefHeight="16.0" prefWidth="194.0" text="Delete Sentence" />
+      <ChoiceBox fx:id="startCat_CB" layoutX="234.0" layoutY="37.0" prefHeight="25.0" prefWidth="119.0" />
+      <ChoiceBox fx:id="from_CB" layoutX="402.0" layoutY="38.0" prefHeight="25.0" prefWidth="72.0" />
+      <ChoiceBox fx:id="to_CB" layoutX="508.0" layoutY="39.0" prefHeight="25.0" prefWidth="65.0" />
+      <ImageView fx:id="image" fitHeight="41.0" fitWidth="72.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Downloads/Screenshot%20(124).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="upload_button" layoutX="67.0" layoutY="38.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Upload File" />
+      <Button fx:id="info_button" layoutX="826.0" layoutY="39.0" mnemonicParsing="false" onAction="#Info_button" text="i" />
+   </children>
+   <padding>
+      <Insets bottom="15.0" top="5.0" />
+   </padding>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</fx:root>
